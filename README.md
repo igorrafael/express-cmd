@@ -12,10 +12,10 @@ If this package is left active on a production server at the very least ensure t
 # Future work
 Some functionalities that could make this project more useful. Feel free to submit pull requests with any of these.
 
-- [ ] Initial implementation
+- [x] Initial implementation
 - [ ] Tests
 - [ ] Spawining options
-	- [ ] cwd
+	- [x] cwd
 	- [ ] ...
 - [ ] Process management
 	- [ ] Processes termination

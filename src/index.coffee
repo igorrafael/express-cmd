@@ -5,9 +5,11 @@ _ = require('lodash')
 router = express.Router()
 running = []
 closed = []
+
 router.get '/:cmd', (req, res) ->
-  args = []
-  child = spawn(req.params.cmd, _.map(req.query,_.identity))
+  args = _.map (_.omit req.query, ['cwd']), _.identity
+  child = spawn req.params.cmd, args,
+    cwd: req.query.cwd
   running.push child
   child.on 'close', ->
     running = _.remove(running, child.pid)
@@ -17,10 +19,8 @@ router.get '/:cmd', (req, res) ->
       query: req.query
       output: child.out
   child.stdout.on 'data', (data) ->
-    console.log 'stdout: ' + data
     child.out = ('' + data).split('\n')
   child.stderr.on 'data', (data) ->
-    console.log 'stderr: ' + data
     child.out = ('' + data).split('\n')
 
 router.get '/stats', (req, res) ->
