@@ -20,6 +20,6 @@ Some functionalities that could make this project more useful. Feel free to subm
 - [ ] Process management
 	- [ ] Processes termination
 - [ ] Populate .jsbeautifyrc
-- [x] Error handling
+- [@igorrafael] Error handling
 - [ ] Publish to NPM
-	- [ ] fix postinstall script
+	- [ ] Test postinstall script
