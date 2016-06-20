@@ -10,11 +10,12 @@ module.exports = class Process
     @process = spawn @command, @arguments, @options
     @process.stdout.on "data", @append
     @process.stderr.on "data", @append
+    @process.on "error", (error) => @callback? error, @data
+    @process.on "close", => @callback? undefined, @data
 
-    callback = @options.callback
-    if callback?
-      @process.on "error", (error) => callback error, @data
-      @process.on "close", => callback undefined, @data
+    @callback = (args...) ->
+      @options.callback args...
+      @callback = null
 
   append: (data) =>
     lines = data.toString().split "\n"
