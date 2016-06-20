@@ -7,6 +7,7 @@ app.get("/", function (req, res) {
 
 app.use("/cmd", require("./lib"));
 
-app.listen(3000, function () {
-  console.log("Test server listening on port 3000!");
+var port = 3030;
+app.listen(port, function () {
+  console.log("Test server listening on port "+port);
 });

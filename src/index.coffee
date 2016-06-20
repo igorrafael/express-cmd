@@ -16,12 +16,15 @@ router.get '/:cmd', (req, res) ->
   child = spawn req.params.cmd, args,
     cwd: req.query.cwd
   running.push child
+  child.on 'error', (err) ->
+    res.status(500).json
+      err: err
   child.on 'close', ->
     running = _.remove(running, child.pid)
     closed.push child
     res.status(200).json
       args: args
-      query: req.query
+      cwd: req.query.cwd
       output: child.out
   child.stdout.on 'data', (data) ->
     child.out = ('' + data).split('\n')
