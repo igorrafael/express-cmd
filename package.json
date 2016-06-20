@@ -1,0 +1,25 @@
+{
+  "name": "express-cmd",
+  "version": "0.1.0",
+  "description": "URL centric API for runing subprocesses using an express router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorrafael/express-cmd"
+  },
+  "keywords": [
+    "express",
+    "shell",
+    "bash",
+    "command",
+    "cmd"
+  ],
+  "author": "Igor Rafael de Sousa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/igorrafael/express-cmd/issues"
+  }
+}
