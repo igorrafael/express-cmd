@@ -4,7 +4,7 @@
   "description": "URL centric API for runing subprocesses using an express router",
   "main": "lib/index.js",
   "scripts": {
-    "build": "./node_modules/.bin/coffee -o lib/ -c src/",
+    "build": "coffee -o lib/ -c src/",
     "prepublish": "npm run build",
     "pretest": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
