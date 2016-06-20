@@ -22,4 +22,4 @@ module.exports = class Process
     @output = _.concat @output, lines
 
   @property "data",
-    get: -> _.omit this, ["process"]
+    get: -> _.omit this, ["process","callback"]
