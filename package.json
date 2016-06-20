@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "coffee -o lib/ -c src/",
+    "postinstall": "npm run build",
     "prepublish": "npm run build",
     "pretest": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
