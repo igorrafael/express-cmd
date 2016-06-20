@@ -19,3 +19,4 @@ Some functionalities that could make this project more useful. Feel free to subm
 	- [ ] ...
 - [ ] Process management
 	- [ ] Processes termination
+- [ ] .jsbeautifyrc
