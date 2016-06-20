@@ -2,20 +2,24 @@
   "name": "express-cmd",
   "version": "0.1.0",
   "description": "URL centric API for runing subprocesses using an express router",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "./node_modules/.bin/coffee -o lib/ -c src/",
+    "postinstall": "npm run build",
+    "postversion": "npm run build",
+    "prepublish": "npm run build",
+    "pretest": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/igorrafael/express-cmd"
   },
   "keywords": [
-    "express",
-    "shell",
-    "bash",
-    "command",
-    "cmd"
+    "express", "shell", "bash", "command", "cmd"
   ],
   "author": "Igor Rafael de Sousa",
   "license": "MIT",
