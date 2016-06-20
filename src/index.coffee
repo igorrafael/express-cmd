@@ -6,6 +6,11 @@ router = express.Router()
 running = []
 closed = []
 
+router.get '/stats', (req, res) ->
+  res.status(200).json
+    running: _.map(running, 'pid')
+    closed: _.map(closed, 'out')
+
 router.get '/:cmd', (req, res) ->
   args = _.map (_.omit req.query, ['cwd']), _.identity
   child = spawn req.params.cmd, args,
@@ -22,10 +27,5 @@ router.get '/:cmd', (req, res) ->
     child.out = ('' + data).split('\n')
   child.stderr.on 'data', (data) ->
     child.out = ('' + data).split('\n')
-
-router.get '/stats', (req, res) ->
-  res.status(200).json
-    running: _.map(running, 'pid')
-    closed: _.map(closed, 'out')
 
 module.exports = router
