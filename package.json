@@ -19,11 +19,21 @@
     "url": "https://github.com/igorrafael/express-cmd"
   },
   "keywords": [
-    "express", "shell", "bash", "command", "cmd"
+    "express",
+    "shell",
+    "bash",
+    "command",
+    "cmd"
   ],
   "author": "Igor Rafael de Sousa",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/igorrafael/express-cmd/issues"
+  },
+  "dependencies": {
+    "lodash": "~4.13.1",
+    "chai": "~3.5.0",
+    "mocha": "~2.5.3",
+    "express": "~4.14.0"
   }
 }
